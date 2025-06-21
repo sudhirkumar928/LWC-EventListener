@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LWC CDC Listener - Sudhir Kumar Panda</title>
+
+  <!-- 🔗 Open Graph (for LinkedIn, Facebook, etc.) -->
+  <meta property="og:title" content="Salesforce CDC Listener - LWC by Sudhir Kumar Panda" />
+  <meta property="og:description" content="A Lightning Web Component to listen to Salesforce Change Data Capture (CDC) events." />
+  <meta property="og:image" content="https://sudhirkumar928.github.io/LWC-EventListener/preview.png" />
+  <meta property="og:url" content="https://sudhirkumar928.github.io/LWC-EventListener/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem auto;
+      max-width: 800px;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+    h1 { color: #0070d2; }
+    img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
+    }
+    code, pre {
+      background: #f4f4f4;
+      padding: 10px;
+      display: block;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>⚡ Salesforce CDC Listener - LWC</h1>
+
+  <p>This project is a <strong>Lightning Web Component</strong> designed to listen to real-time <strong>Change Data Capture (CDC)</strong> events in a Salesforce org.</p>
+
+  <h2>📦 Features</h2>
+  <ul>
+    <li>Subscribes to CDC events for <strong>Account</strong>, <strong>Contact</strong>, and <strong>Case</strong></li>
+    <li>Configurable to display real-time changes inside a Lightning Page</li>
+    <li>Simplifies CDC testing and verification</li>
+  </ul>
+
+  <h2>🚀 Setup</h2>
+  <ol>
+    <li>Add Account, Contact, and Case to CDC under <strong>Setup → Change Data Capture</strong></li>
+    <li>Ensure the user has:
+      <ul>
+        <li>Read access to those objects</li>
+        <li><code>API Enabled</code> permission (via Permission Set or Profile)</li>
+      </ul>
+    </li>
+    <li>Add the component to a <strong>Home Page</strong> or object-specific <strong>Record Page</strong></li>
+  </ol>
+
+  <h2>🖼️ Component Preview</h2>
+  <p>This is how the component looks when placed on a page:</p>
+  <img src="preview.png" alt="LWC CDC Listener preview image" />
+
+  <h2>🔗 Repository</h2>
+  <p>View full source code and instructions on <a href="https://github.com/sudhirkumar928/LWC-EventListener" target="_blank">GitHub</a>.</p>
+
+  <h2>🔐 License</h2>
+  <p>This project is licensed under the <strong>BSD 3-Clause License</strong>.<br />
+  &copy; 2025 Sudhir Kumar Panda</p>
+</body>
+</html>
