@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+	<apiVersion>64.0</apiVersion>
+	<description>This component is used to listen to the events(CDC for now) raised in the platform.</description>
+	<isExposed>true</isExposed>
+	<targets>
+        <target>lightning__RecordPage</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+	</targets>
+</LightningComponentBundle>

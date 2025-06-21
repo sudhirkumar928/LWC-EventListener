@@ -1,0 +1,65 @@
+<template>
+    <lightning-card title="🔄 Change Data Listener">
+        <div class="slds-p-around_medium">
+            <!-- Clear button -->
+            <div class="slds-m-bottom_medium slds-text-align_right">
+                <lightning-button label="Clear Events" variant="neutral" onclick={handleClear}></lightning-button>
+            </div>
+
+            <!-- Show events if available -->
+            <template if:true={events.length}>
+                <template for:each={events} for:item="evt">
+                    <div key={evt.replayId} class="slds-box slds-box_xx-small slds-m-bottom_small slds-theme_alert-texture">
+                        <div class="slds-grid slds-wrap slds-gutters_small">
+                            <!-- Object Name -->
+                            <div class="slds-col slds-size_1-of-1 slds-text-heading_small slds-m-bottom_xx-small">
+                                <lightning-icon icon-name="standard:record" size="x-small" class="slds-m-right_x-small"></lightning-icon>
+                                {evt.object}
+                            </div>
+
+                            <!-- Change Type Badge -->
+                            <div class="slds-col slds-size_1-of-2">
+                                <p>
+                                    <strong>Change Type:</strong>
+                                    <span class={evt.badgeClass}>{evt.changeType}</span>
+                                </p>
+                            </div>
+
+                            <!-- Record ID -->
+                            <div class="slds-col slds-size_1-of-2">
+                                <p>
+                                    <strong>Record ID:</strong>
+                                    <span class="slds-text-color_brand">{evt.recordId}</span>
+                                </p>
+                            </div>
+
+                            <!-- Changed Fields -->
+                            <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                <p><strong>Fields Changed:</strong> {evt.changedFields}</p>
+                            </div>
+
+                            <!-- New Values List -->
+                            <div class="slds-col slds-size_1-of-1 slds-m-top_x-small">
+                                <ul>
+                                    <template for:each={evt.changes} for:item="change">
+                                        <li key={change.field}>
+                                            Field <b>{change.field}</b> new vlaue : <b>{change.newDisplay}</b>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </template>
+            </template>
+
+            <!-- Show this if no events -->
+            <template if:false={events.length}>
+                <div class="slds-align_absolute-center slds-text-color_weak slds-m-top_medium">
+                    <lightning-icon icon-name="utility:info" size="small" class="slds-m-right_x-small"></lightning-icon>
+                    No changes detected yet. Listening for events...
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
